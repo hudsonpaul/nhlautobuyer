@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131229224115) do
+ActiveRecord::Schema.define(version: 20131231182453) do
 
   create_table "ea_sessions", force: true do |t|
     t.string   "session_key"
@@ -41,6 +41,15 @@ ActiveRecord::Schema.define(version: 20131229224115) do
   create_table "positions", force: true do |t|
     t.string   "name"
     t.integer  "ea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "purchases", force: true do |t|
+    t.string   "player_type"
+    t.string   "player_name"
+    t.string   "status"
+    t.integer  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

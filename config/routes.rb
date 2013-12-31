@@ -1,4 +1,6 @@
 Nhlbuyer::Application.routes.draw do
+  resources :purchases
+
   resources :filters
 
   # The priority is based upon order of creation: first created -> highest priority.

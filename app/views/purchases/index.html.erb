@@ -1,0 +1,29 @@
+<h1>Listing purchases</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Player type</th>
+      <th>Player name</th>
+      <th>Status</th>
+      <th>Amount</th>
+      <th>Created At </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.player_type %></td>
+        <td><%= purchase.player_name %></td>
+        <td><%= purchase.status %></td>
+        <td><%= purchase.amount %></td>
+        <td><%= purchase.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Purchase', new_purchase_path %>
