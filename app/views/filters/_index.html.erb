@@ -1,0 +1,28 @@
+<h2>Listing filters</h2>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Auto buy at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% filters.each do |filter| %>
+      <tr>
+        <td><%= filter.name %></td>
+        <td><%= number_with_delimiter(filter.auto_buy_at, :delimiter => ',') %></td>
+        <td><%= link_to 'Show', search_filter_path(search, filter) %></td>
+        <td><%= link_to 'Edit', edit_search_filter_path(search, filter) %></td>
+        <td><%= link_to 'Destroy', search_filter_path(search, filter), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Filter', new_search_filter_path(search) %>

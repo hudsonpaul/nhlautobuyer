@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @filter.name %>
+</p>
+
+<p>
+  <strong>Auto buy at:</strong>
+  <%= @filter.auto_buy_at %>
+</p>
+
+<p>
+  <strong>Search:</strong>
+  <%= @filter.search %>
+</p>
+
+<%= link_to 'Edit', edit_filter_path(@filter) %> |
+<%= link_to 'Back', filters_path %>

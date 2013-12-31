@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  team_id: 
+  position_id: 
+  style_id: 
+  name_filter: MyString
+  bin_filter: MyString
+
+two:
+  name: MyString
+  team_id: 
+  position_id: 
+  style_id: 
+  name_filter: MyString
+  bin_filter: MyString

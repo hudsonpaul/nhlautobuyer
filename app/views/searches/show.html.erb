@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>
+
+<div class="row-fluid">
+  <div class="span11">
+    <p class="span2">
+    <strong>Name:</strong></br>
+    <%= @search.name %>
+    </p>
+
+    <p class="span2">
+    <strong>Player Type:</strong></br>
+    <%= @search.player_type.name %>
+    </p>
+
+    <p class="span2">
+    <strong>Team:</strong></br>
+    <%= @search.team.name %>
+    </p>
+
+    <p class="span2">
+    <strong>Position:</strong></br>
+    <%= @search.position.name %>
+    </p>
+
+    <p class="span2">
+    <strong>Style:</strong></br>
+    <%= @search.style.name %>
+    </p>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span11">
+    <p class="span2">
+    <strong>Min Bin:</strong></br>
+    <%= number_with_delimiter(@search.min_bin, :delimiter => ',') %>
+    </p>
+
+    <p class="span2">
+    <strong>Max Bin:</strong></br>
+    <%= number_with_delimiter(@search.bin_filter, :delimiter => ',') %>
+    </p>
+
+    <p class="span2">
+    <strong>Use Autobuyer:</strong></br>
+    <%= @search.use_autobuyer %>
+    </p>
+  </div>
+</div>
+
+<%= render :partial => 'filters/index', :locals => {:search => @search, :filters => @search.filters } %>
+
+<br />
+
+<%= render :partial => 'cards/index', :locals => {:cards => @searched_cards} %>
+

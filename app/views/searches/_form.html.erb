@@ -1,0 +1,50 @@
+<%= form_for(@search) do |f| %>
+  <% if @search.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@search.errors.count, "error") %> prohibited this search from being saved:</h2>
+
+      <ul>
+        <% @search.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :player_type_id %>
+    <%= f.select :player_type_id, PlayerType.all.collect {|lt| [lt.name, lt.id]}, { :include_blank => true } %>
+  </div>
+  <div class="field">
+    <%= f.label :team_id %>
+    <%= f.select :team_id, Team.all.collect {|lt| [lt.name, lt.id]}, { :include_blank => true } %>
+  </div>
+  <div class="field">
+    <%= f.label :position_id %>
+    <%= f.select :position_id, Position.all.collect {|lt| [lt.name, lt.id]}, { :include_blank => true } %>
+  </div>
+  <div class="field">
+    <%= f.label :style %>
+    <%= f.select :style_id, Style.all.collect {|lt| [lt.name, lt.id]}, { :include_blank => true } %>
+  </div>
+  <div class="field">
+    <%= f.label :min_bin, 'Min Bin' %>
+    <%= f.text_field :min_bin %>
+  </div>
+  <div class="field">
+    <%= f.label :bin_filter, 'Max Bin' %>
+    <%= f.text_field :bin_filter %>
+  </div>
+  <div class="field">
+    <%= f.label :use_autobuyer %>
+    <%= f.check_box :use_autobuyer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

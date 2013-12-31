@@ -1,0 +1,6 @@
+To: mendicant@gmail.com
+Subject: This is a test of the mailer.
+From: mendicant.web@gmail.com
+
+
+This is the body that I am testing.
