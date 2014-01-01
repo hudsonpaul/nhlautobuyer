@@ -15,7 +15,7 @@ class SearchesController < ApplicationController
     logger.debug "session is #{@current_session}"
     logger.debug "session is #{@current_session.session_key}"
 
-    @searched_cards = Searches.get_search(@current_session, @search)
+    @searched_trades = Searches.get_search(@current_session, @search)
 
   end
 
