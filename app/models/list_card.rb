@@ -7,15 +7,15 @@ class ListCard
   require 'active_support/core_ext/hash/conversions'
   require 'awesome_print'
 
-  attr_accessor :card_id, :reserve, :bin
+  attr_accessor :card_id, :reserve, :bin, :time
 
-  def self.list_card(current_session, card_id, reserve, bin)
+  def self.list_card(current_session, card_id, reserve, bin, time)
 
     puts "You did #{current_session.session_key}, card: #{card_id}, reserve: #{reserve}, BIN: #{bin}"
     
     connection = EaUrls.get_connection
 
-    response = connection.get EaUrls.start_trade_url(current_session, card_id, reserve, bin)
+    response = connection.get EaUrls.start_trade_url(current_session, card_id, reserve, bin, time)
 
     trade_hash = Hash.from_xml(response.body) 
     ap trade_hash

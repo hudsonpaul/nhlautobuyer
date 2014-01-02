@@ -59,8 +59,8 @@ class EaUrls
     return "/wal/nhl-2014-ps3-ios/cardhouse/isSearch/#{current_session.session_key}?ctyp=-1&minb=-1&noac=1&numr=40&macr=-1&leag=-1&maxb=-1&rtng=0&iret=true&micr=-1&styl=-1&pos=-1&uid=#{current_session.user_id}&form=-1&cat=-1&team=-1&mytr=2&zone=-1&plrt=-1&lev=-1&strt=0&nat=-1"
   end
 
-  def self.start_trade_url(current_session, card_id, reserve, bin)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isStart/#{current_session.session_key}?uid=#{current_session.user_id}&cid=#{card_id}&cred=#{bin}&resv=#{reserve}&prd=3600&oftx=Buy%20me!"
+  def self.start_trade_url(current_session, card_id, reserve, bin, time)
+    return "/wal/nhl-2014-ps3-ios/cardhouse/isStart/#{current_session.session_key}?uid=#{current_session.user_id}&cid=#{card_id}&cred=#{bin}&resv=#{reserve}&prd=#{time}&oftx=Buy%20me!"
   end
   private
 

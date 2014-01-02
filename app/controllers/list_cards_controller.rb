@@ -11,7 +11,7 @@ class ListCardsController < ApplicationController
   def create
     
     hash = params[:list_card]
-    @message = ListCard.list_card(@current_session, hash[:card_id], hash[:reserve], hash[:bin])
+    @message = ListCard.list_card(@current_session, hash[:card_id], hash[:reserve], hash[:bin], hash[:time])
 
     redirect_to selling_index_path
 

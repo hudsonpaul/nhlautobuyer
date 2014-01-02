@@ -9,6 +9,9 @@
     <%= f.label :bin %>
     <%= f.text_field :bin %>
   </div>
+  <div class="field">
+    <%= f.label :time %>
+    <%= f.select :time, options_for_select([['1hr', 1.hour.to_i],['3hr', 3.hour.to_i],['6hr', 6.hour.to_i],['12hr', 12.hour.to_i],['24hr', 24.hour.to_i]]) %>
   <div class="actions">
     <%= f.submit %>
   </div>

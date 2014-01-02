@@ -31,7 +31,11 @@
       <td>
         <% if trade.trade_state == 'Expired' %>
           <%= link_to 'List', new_list_card_path(:card_id => trade.card.card_id), :data => {:confirm => "Are you sure you want to list #{trade.card.name}?"} %>
-          <%= link_to 'Relist', list_card_path(:id => 0, :list_card => {:card_id => trade.card.card_id, :reserve => trade.start_price, :bin => trade.bin}), {:data => {:confirm => "Are you sure you want to list #{trade.card.name}?"}, :method => :put} %>
+          <%= link_to 'Relist 1hr', list_card_path(:id => 0, :list_card => {:card_id => trade.card.card_id, :reserve => trade.start_price, :bin => trade.bin, :time => 1.hour.to_i}), {:data => {:confirm => "Are you sure you want to relist for 1hr #{trade.card.name}?"}, :method => :put} %>
+          <%= link_to '3hr', list_card_path(:id => 0, :list_card => {:card_id => trade.card.card_id, :reserve => trade.start_price, :bin => trade.bin, :time => 3.hour.to_i}), {:data => {:confirm => "Are you sure you want to relist for 3hr #{trade.card.name}?"}, :method => :put} %>
+          <%= link_to '6hr', list_card_path(:id => 0, :list_card => {:card_id => trade.card.card_id, :reserve => trade.start_price, :bin => trade.bin, :time => 6.hour.to_i}), {:data => {:confirm => "Are you sure you want to relist for 6hr #{trade.card.name}?"}, :method => :put} %>
+          <%= link_to '12hr', list_card_path(:id => 0, :list_card => {:card_id => trade.card.card_id, :reserve => trade.start_price, :bin => trade.bin, :time => 12.hour.to_i}), {:data => {:confirm => "Are you sure you want to relist for 12hr #{trade.card.name}?"}, :method => :put} %>
+          <%= link_to '24hr', list_card_path(:id => 0, :list_card => {:card_id => trade.card.card_id, :reserve => trade.start_price, :bin => trade.bin, :time => 24.hour.to_i}), {:data => {:confirm => "Are you sure you want to 24hr #{trade.card.name}?"}, :method => :put} %>
         <% end %>
   
       </td>
