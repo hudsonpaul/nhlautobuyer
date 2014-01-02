@@ -16,4 +16,12 @@ class ListCardsController < ApplicationController
     redirect_to selling_index_path
 
   end
+  
+  def update
+    create
+  end
+
+  def show
+    create
+  end
 end

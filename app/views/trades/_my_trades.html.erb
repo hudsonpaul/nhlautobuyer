@@ -31,6 +31,7 @@
       <td>
         <% if trade.trade_state == 'Expired' %>
           <%= link_to 'List', new_list_card_path(:card_id => trade.card.card_id), :data => {:confirm => "Are you sure you want to list #{trade.card.name}?"} %>
+          <%= link_to 'Relist', list_card_path(:id => 0, :list_card => {:card_id => trade.card.card_id, :reserve => trade.start_price, :bin => trade.bin}), {:data => {:confirm => "Are you sure you want to list #{trade.card.name}?"}, :method => :put} %>
         <% end %>
   
       </td>

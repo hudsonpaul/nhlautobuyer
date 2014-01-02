@@ -22,7 +22,6 @@ class ListCard
 
     return trade_hash
 
-
   end
 
   def persisted?
