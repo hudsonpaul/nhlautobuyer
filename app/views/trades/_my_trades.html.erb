@@ -1,0 +1,40 @@
+
+<p>Found <%= trades.length %> results </p>
+<table class="table table-condensed">
+  <tr>
+    <th>Name</th>
+    <th>BIN</th>
+    <th>Start</th>
+    <th>Current Bid</th>
+    <th>Type</th>
+    <th>POS</th>
+    <th>Style</th>
+    <th>Time</th>
+    <th>Seller</th>
+    <th>Offers</th>
+    <th>State</th>
+    <th>Actions</th>
+  </tr>
+  <% trades.each do |trade| %>
+    <tr class="<%= 'success' if trade.buy_it_now == 0 %>">
+      <td><%= trade.card.name %></td>
+      <td><%= number_with_delimiter(trade.bin, :delimiter => ',') %></td>
+      <td><%= number_with_delimiter(trade.start_price, :delimiter => ',') %></td>
+      <td><%= number_with_delimiter(trade.bid, :delimiter => ',') %></td>
+      <td><%= trade.card.player_type.name %></td>
+      <td><%= trade.card.position.name %></td>
+      <td><%= trade.card.style.name %></td>
+      <td><%= humanize trade.time_remaining %></td>
+      <td><%= trade.seller %></td>
+      <td><%= trade.offers_pending %></td>
+      <td><%= trade.trade_state %></td>
+      <td>
+        <% if trade.trade_state == 'Expired' %>
+          <%= link_to 'Relist', "#", :data => {:confirm => "Are you sure you want to relist #{trade.card.name}?"} %>
+        <% end %>
+  
+      </td>
+    </tr>
+
+  <% end %>
+</table>
