@@ -5,12 +5,12 @@
     <tr>
       <th>Name</th>
       <th>Player Type</th>
-      <th>Team</th>
-      <th>Position</th>
-      <th>Style</th>
       <th>Min Bin</th>
       <th>Max Bin</th>
       <th>Use Auto Buyer</th>
+      <th>Team</th>
+      <th>Position</th>
+      <th>Style</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,15 +20,14 @@
   <tbody>
     <% @searches.each do |search| %>
       <tr>
-        <td><%= search.name %></td>
+        <td><%= link_to search.name, search %></td>
         <td><%= search.player_type.name %></td>
-        <td><%= search.team.name %></td>
-        <td><%= search.position.name %></td>
-        <td><%= search.style.name %></td>
         <td><%= number_with_delimiter(search.min_bin, :delimiter => ',') %></td>
         <td><%= number_with_delimiter(search.bin_filter, :delimiter => ',') %></td>
         <td><%= search.use_autobuyer %></td>
-        <td><%= link_to 'Show', search %></td>
+        <td><%= search.team.name %></td>
+        <td><%= search.position.name %></td>
+        <td><%= search.style.name %></td>
         <td><%= link_to 'Edit', edit_search_path(search) %></td>
         <td><%= link_to 'Destroy', search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
