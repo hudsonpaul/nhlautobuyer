@@ -7,6 +7,7 @@ Nhlbuyer::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :logins
+  resources :deck_info
   resources :searches do
     resources :filters
   end

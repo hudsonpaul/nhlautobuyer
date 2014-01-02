@@ -1,0 +1,7 @@
+
+<h2>Unassigned</h2>
+<%= render :partial => 'cards/index', :locals => {:cards => @deck_info.unassigned_cards} %>
+
+<h2>Escrow</h2>
+<%= render :partial => 'cards/index', :locals => {:cards => @deck_info.escrow_cards} %>
+
