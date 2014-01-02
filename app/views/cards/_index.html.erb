@@ -28,6 +28,12 @@
       <td><%= trade.offers_pending %></td>
       <td>
         <%= link_to 'BIN', bid_show_path(:trade_id => trade.trade_id, :amount => trade.bin), :data => {:confirm => "Are you sure you want to bin for #{trade.bin}?"} %>
+        <% if trade.is_watched %>
+          <%= link_to 'Unwatch', "/unwatch/#{trade.trade_id}", :data => {:confirm => "Are you sure you want to unwatch #{trade.card.name}?"} %>
+        <% else %>
+          <%= link_to 'Watch', "/watch/#{trade.trade_id}", :data => {:confirm => "Are you sure you want to watch #{trade.card.name}?"} %>
+        <% end %>
+  
       </td>
     </tr>
 

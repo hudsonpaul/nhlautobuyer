@@ -4,7 +4,7 @@ class Trade
   extend ActiveModel::Naming
   require 'awesome_print'
 
-  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card
+  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched
 
   def self.create_from_watchlist(results)
 
@@ -20,6 +20,7 @@ class Trade
       t.seller = result['sellername']
       t.my_bid = !result['yourbidstate'].to_i.zero?
       t.offers_pending = result['offerspendingcount'].to_i
+      t.is_watched = result["iswatched"] == "1" ? true : false
       t.buy_it_now = 1
       
       t.card = Card.create_from_carddata(result['carddata'])
@@ -46,6 +47,7 @@ class Trade
       t.seller = result['sellername']
       t.my_bid = !result['yourbidstate'].to_i.zero?
       t.offers_pending = result['offerspendingcount'].to_i
+      t.is_watched = result["iswatched"] == "1" ? true : false
 
       t.card = Card.create_from_carddata(result['carddata'])
 

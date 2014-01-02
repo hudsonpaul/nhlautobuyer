@@ -14,6 +14,9 @@ Nhlbuyer::Application.routes.draw do
   get "watchlist" => 'watchlist#index'
   get "bid/show" => 'bid#show'
 
+  get "watch/:trade_id" => 'watch#show'
+  get "unwatch/:trade_id" => 'unwatch#show'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

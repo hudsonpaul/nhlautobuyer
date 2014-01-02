@@ -47,6 +47,14 @@ class EaUrls
     return "/wal/nhl-2014-ps3-ios/cardhouse/deckInfo/#{current_session.session_key}?uid=#{current_session.user_id}&acid=-1&ver=1&pers=0"
   end
 
+  def self.remove_watch_url(current_session, trade_id)
+    return "/wal/nhl-2014-ps3-ios/cardhouse/isRemoveWatch/#{current_session.session_key}?uid=#{current_session.user_id}&tidl|0=#{trade_id}&tid=#{trade_id}"
+  end
+
+  def self.add_watch_url(current_session, trade_id)
+    return "/wal/nhl-2014-ps3-ios/cardhouse/isWatchTrade/#{current_session.session_key}?uid=#{current_session.user_id}&tid=#{trade_id}"
+  end
+
   private
 
   def self.authenticate(login_info)
