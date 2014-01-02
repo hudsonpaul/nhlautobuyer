@@ -4,7 +4,7 @@ class Trade
   extend ActiveModel::Naming
   require 'awesome_print'
 
-  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched
+  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state
 
   def self.create_from_watchlist(results)
 
@@ -22,6 +22,10 @@ class Trade
       t.offers_pending = result['offerspendingcount'].to_i
       t.is_watched = result["iswatched"] == "1" ? true : false
       t.buy_it_now = 1
+      t.trade_state = ""
+      t.trade_state = "In Progress" if result["tradestate"].to_i == 1
+      t.trade_state = "Expired" if result["tradestate"].to_i == 3
+      t.trade_state = "Sold" if result["tradestate"].to_i == 4
       
       t.card = Card.create_from_carddata(result['carddata'])
 
@@ -48,6 +52,11 @@ class Trade
       t.my_bid = !result['yourbidstate'].to_i.zero?
       t.offers_pending = result['offerspendingcount'].to_i
       t.is_watched = result["iswatched"] == "1" ? true : false
+      t.trade_state = ""
+      t.trade_state = "In Progress" if result["tradestate"].to_i == 1
+      t.trade_state = "Expired" if result["tradestate"].to_i == 3
+      t.trade_state = "Sold" if result["tradestate"].to_i == 4
+      
 
       t.card = Card.create_from_carddata(result['carddata'])
 

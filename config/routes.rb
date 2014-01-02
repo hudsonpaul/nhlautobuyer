@@ -8,6 +8,7 @@ Nhlbuyer::Application.routes.draw do
 
   resources :logins
   resources :deck_info
+  resources :selling
   resources :searches do
     resources :filters
   end
