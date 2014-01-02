@@ -1,0 +1,15 @@
+<%= form_for(@list_card) do |f| %>
+
+  <%= f.hidden_field :card_id %>
+  <div class="field">
+    <%= f.label :reserve %>
+    <%= f.text_field :reserve %>
+  </div>
+  <div class="field">
+    <%= f.label :bin %>
+    <%= f.text_field :bin %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

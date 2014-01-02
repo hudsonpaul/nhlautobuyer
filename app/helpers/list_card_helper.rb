@@ -1,0 +1,2 @@
+module ListCardHelper
+end
