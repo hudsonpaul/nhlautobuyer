@@ -4,7 +4,15 @@ class Trade
   extend ActiveModel::Naming
   require 'awesome_print'
 
-  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid
+  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid, :bid_state
+
+  def min_required_bid
+    if (self.bid == 0)
+      return self.start_price
+    else
+      return self.bid + 50
+    end
+  end
 
   def self.create_from_watchlist(results)
 
@@ -27,6 +35,9 @@ class Trade
       t.trade_state = "Expired" if result["tradestate"].to_i == 3
       t.trade_state = "Sold" if result["tradestate"].to_i == 4
       t.auto_bid = AutoBid.where(:trade_id => t.trade_id).first
+      t.bid_state = "None"
+      t.bid_state = "Losing" if result['yourbidstate'].to_i == 1
+      t.bid_state = "Winning" if result['yourbidstate'].to_i == 2
       
       t.card = Card.create_from_carddata(result['carddata'])
 
@@ -57,6 +68,10 @@ class Trade
       t.trade_state = "In Progress" if result["tradestate"].to_i == 1
       t.trade_state = "Expired" if result["tradestate"].to_i == 3
       t.trade_state = "Sold" if result["tradestate"].to_i == 4
+      t.auto_bid = AutoBid.where(:trade_id => t.trade_id).first
+      t.bid_state = "None"
+      t.bid_state = "Losing" if result['yourbidstate'].to_i == 1
+      t.bid_state = "Winning" if result['yourbidstate'].to_i == 2
       
 
       t.card = Card.create_from_carddata(result['carddata'])

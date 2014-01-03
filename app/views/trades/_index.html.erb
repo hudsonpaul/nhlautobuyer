@@ -7,6 +7,7 @@
     <th>Start</th>
     <th>Current Bid</th>
     <th>AutoBid</th>
+    <th>MyBid</th>
     <th>Type</th>
     <th>POS</th>
     <th>Style</th>
@@ -23,13 +24,14 @@
       <td><%= number_with_delimiter(trade.bid, :delimiter => ',') %></td>
       <td>
         <% if trade.auto_bid %>
-          <%= trade.auto_bid.max_bid %>
+          <%= number_with_delimiter(trade.auto_bid.max_bid, :delimiter => ',') %>
           <%= link_to 'Edit', edit_auto_bid_path(trade.auto_bid) %>
           <%= link_to 'Destroy', trade.auto_bid, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% else %>
           <%= link_to 'Create', new_auto_bid_path(:auto_bid => {:trade_id => trade.trade_id}) %>
         <% end %>
       </td>
+      <td><%= trade.bid_state %></td>
       <td><%= trade.card.player_type.name %></td>
       <td><%= trade.card.position.name %></td>
       <td><%= trade.card.style.name %></td>

@@ -10,6 +10,11 @@ class UnwatchController < ApplicationController
     ap unwatch_hash
 
     @message = unwatch_hash
+    
+    AutoBid.where(:trade_id => params[:trade_id]).each do |bid|
+      bid.destroy
+    end
+
   end
 
 end
