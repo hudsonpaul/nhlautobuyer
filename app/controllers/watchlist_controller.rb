@@ -1,7 +1,6 @@
 class WatchlistController < ApplicationController
-
+  before_action :get_session
   def index
-    @current_session = EaSession.first
 
     @watched_trades = WatchList.get_watched_trades(@current_session)
 

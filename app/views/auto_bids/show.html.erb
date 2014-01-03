@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Trade:</strong>
+  <%= @auto_bid.trade_id %>
+</p>
+
+<p>
+  <strong>Max bid:</strong>
+  <%= @auto_bid.max_bid %>
+</p>
+
+<%= link_to 'Edit', edit_auto_bid_path(@auto_bid) %> |
+<%= link_to 'Back', auto_bids_path %>

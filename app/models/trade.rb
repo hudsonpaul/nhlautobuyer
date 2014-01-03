@@ -4,7 +4,7 @@ class Trade
   extend ActiveModel::Naming
   require 'awesome_print'
 
-  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state
+  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid
 
   def self.create_from_watchlist(results)
 
@@ -26,6 +26,7 @@ class Trade
       t.trade_state = "In Progress" if result["tradestate"].to_i == 1
       t.trade_state = "Expired" if result["tradestate"].to_i == 3
       t.trade_state = "Sold" if result["tradestate"].to_i == 4
+      t.auto_bid = AutoBid.where(:trade_id => t.trade_id).first
       
       t.card = Card.create_from_carddata(result['carddata'])
 

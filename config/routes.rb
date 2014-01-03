@@ -1,4 +1,6 @@
 Nhlbuyer::Application.routes.draw do
+  resources :auto_bids
+
   resources :purchases
 
   resources :filters

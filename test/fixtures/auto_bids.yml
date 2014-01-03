@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  trade_id: 1
+  max_bid: 1
+
+two:
+  trade_id: 1
+  max_bid: 1

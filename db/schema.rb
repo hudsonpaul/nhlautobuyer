@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131231182453) do
+ActiveRecord::Schema.define(version: 20140103183831) do
+
+  create_table "auto_bids", force: true do |t|
+    t.integer  "trade_id"
+    t.integer  "max_bid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ea_sessions", force: true do |t|
     t.string   "session_key"

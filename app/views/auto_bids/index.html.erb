@@ -1,0 +1,29 @@
+<h1>Listing auto_bids</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Trade</th>
+      <th>Max bid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @auto_bids.each do |auto_bid| %>
+      <tr>
+        <td><%= auto_bid.trade_id %></td>
+        <td><%= auto_bid.max_bid %></td>
+        <td><%= link_to 'Show', auto_bid %></td>
+        <td><%= link_to 'Edit', edit_auto_bid_path(auto_bid) %></td>
+        <td><%= link_to 'Destroy', auto_bid, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Auto bid', new_auto_bid_path %>
