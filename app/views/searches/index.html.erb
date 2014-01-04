@@ -7,6 +7,8 @@
       <th>Player Type</th>
       <th>Min Bin</th>
       <th>Max Bin</th>
+      <th>Min Bid</th>
+      <th>Max Bid</th>
       <th>Use Auto Buyer</th>
       <th>Team</th>
       <th>Position</th>
@@ -24,6 +26,8 @@
         <td><%= search.player_type.name %></td>
         <td><%= number_with_delimiter(search.min_bin, :delimiter => ',') %></td>
         <td><%= number_with_delimiter(search.bin_filter, :delimiter => ',') %></td>
+        <td><%= number_with_delimiter(search.min_bid, :delimiter => ',') %></td>
+        <td><%= number_with_delimiter(search.max_bid, :delimiter => ',') %></td>
         <td><%= search.use_autobuyer %></td>
         <td><%= search.team.name %></td>
         <td><%= search.position.name %></td>

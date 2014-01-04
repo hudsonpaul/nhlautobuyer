@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140103183831) do
+ActiveRecord::Schema.define(version: 20140104013914) do
 
   create_table "auto_bids", force: true do |t|
     t.integer  "trade_id"
@@ -72,6 +72,8 @@ ActiveRecord::Schema.define(version: 20140103183831) do
     t.integer  "player_type_id", default: 0
     t.boolean  "use_autobuyer"
     t.integer  "min_bin"
+    t.integer  "min_bid"
+    t.integer  "max_bid"
   end
 
   add_index "searches", ["position_id"], name: "index_searches_on_position_id"

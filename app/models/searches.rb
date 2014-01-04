@@ -10,7 +10,7 @@ class Searches
 
   def self.get_search(current_session, search)
     connection = EaUrls.get_connection
-
+puts EaUrls.search_url(current_session, search)
     response = connection.get EaUrls.search_url(current_session, search)
 
     search_hash = Hash.from_xml(response.body) 

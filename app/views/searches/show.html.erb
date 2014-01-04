@@ -44,6 +44,16 @@
     </p>
 
     <p class="span2">
+    <strong>Min Bid:</strong></br>
+    <%= number_with_delimiter(@search.min_bid, :delimiter => ',') %>
+    </p>
+
+    <p class="span2">
+    <strong>Max Bid:</strong></br>
+    <%= number_with_delimiter(@search.max_bid, :delimiter => ',') %>
+    </p>
+
+    <p class="span2">
     <strong>Use Autobuyer:</strong></br>
     <%= @search.use_autobuyer %>
     </p>

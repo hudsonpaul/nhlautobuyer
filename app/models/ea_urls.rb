@@ -36,7 +36,7 @@ class EaUrls
   end
 
   def self.search_url(current_session, search)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isSearch/#{current_session.session_key}?ctyp=1&minb=#{search.min_bin}&noac=0&numr=90&macr=-1&leag=0&maxb=#{search.bin_filter}&rtng=0&iret=true&micr=-1&styl=#{search.style.ea_id}&pos=#{search.position.ea_id}&uid=#{current_session.user_id}&form=-1&cat=-1&team=#{search.team.ea_id}&mytr=0&zone=-1&plrt=#{search.player_type.ea_id}&lev=-1&strt=0&nat=-1"
+    return "/wal/nhl-2014-ps3-ios/cardhouse/isSearch/#{current_session.session_key}?ctyp=1&minb=#{search.min_bin}&noac=0&numr=90&macr=#{search.max_bid}&leag=0&maxb=#{search.bin_filter}&rtng=0&iret=true&micr=#{search.min_bid}&styl=#{search.style.ea_id}&pos=#{search.position.ea_id}&uid=#{current_session.user_id}&form=-1&cat=-1&team=#{search.team.ea_id}&mytr=0&zone=-1&plrt=#{search.player_type.ea_id}&lev=-1&strt=0&nat=-1"
   end
 
   def self.bid_url(current_session, trade_id, bid_amount)
