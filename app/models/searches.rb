@@ -24,7 +24,7 @@ puts EaUrls.search_url(current_session, search)
       results = [results]
     end
 
-    trades = Trade.create_from(results, search).sort_by {|t| [t.buy_it_now, t.bin]}
+    trades = Trade.create_from(results, search).sort_by {|t| [t.buy_it_now, t.bin, t.start_price]}
     trades
   end
 
