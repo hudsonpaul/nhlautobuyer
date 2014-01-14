@@ -4,7 +4,7 @@ class Card
   extend ActiveModel::Naming
   require 'awesome_print'
 
-  attr_accessor :name, :position, :style, :card_id, :player_type
+  attr_accessor :name, :position, :style, :card_id, :player_type, :overall
 
   def self.create_from_carddata(carddata)
     card = Card.new 
@@ -19,6 +19,7 @@ class Card
     card.style =  Style.find_by_ea_id(carddata['style'].to_i)
     card.player_type =  PlayerType.find_by_ea_id(carddata['playertypeid'].to_i)
     card.card_id = carddata['cardid']
+    card.overall = carddata['rating']
 
     card
   end

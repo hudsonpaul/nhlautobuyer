@@ -18,7 +18,7 @@ class DeckInfo
     response = connection.get EaUrls.deck_info_url(current_session)
 
     deck_info_hash = Hash.from_xml(response.body) 
-    #ap deck_info_hash
+    ap deck_info_hash
 
     deck_info = DeckInfo.new
     if (deck_info_hash["deckinfo"]["unassignedcarddatalist"])

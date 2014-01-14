@@ -3,6 +3,7 @@
 <table class="table table-condensed">
   <tr>
     <th>Name</th>
+    <th>OVR</th>
     <th>BIN</th>
     <th>Start</th>
     <th>Current Bid</th>
@@ -19,6 +20,7 @@
   <% trades.each do |trade| %>
     <tr class="<%= 'success' if trade.buy_it_now == 0 %>">
       <td><%= trade.card.name %></td>
+      <td><%= trade.card.overall %></td>
       <td><%= number_with_delimiter(trade.bin, :delimiter => ',') %></td>
       <td><%= number_with_delimiter(trade.start_price, :delimiter => ',') %></td>
       <td><%= number_with_delimiter(trade.bid, :delimiter => ',') %></td>

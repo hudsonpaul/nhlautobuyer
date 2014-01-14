@@ -14,7 +14,7 @@
       <td><%= card.position.name %></td>
       <td><%= card.style.name %></td>
       <td>
-        <p>-</p>
+        <p><%= link_to 'List', new_list_card_path(:card_id => card.card_id), :data => {:confirm => "Are you sure you want to list #{card.name}?"} %></p>
       </td>
     </tr>
 
