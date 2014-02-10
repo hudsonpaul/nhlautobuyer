@@ -77,11 +77,19 @@ class Trade
       t.card = Card.create_from_carddata(result['carddata'])
       t.ea_card = EaCard.where(:card_db_id => t.card.card_db_id).first
 
-      search.filters.each do |filter|
-        if (t.bin <= filter.auto_buy_at && t.card.name.index(filter.name) && t.bin != 0)
+      if t.ea_card
+        if t.bin <= t.ea_card.auto_buy_at && t.bin != 0
           t.buy_it_now = t.buy_it_now || true
-        else
+	else
           t.buy_it_now = t.buy_it_now || false
+	end
+      else
+        search.filters.each do |filter|
+          if (t.bin <= filter.auto_buy_at && t.card.name.index(filter.name) && t.bin != 0)
+            t.buy_it_now = t.buy_it_now || true
+          else
+            t.buy_it_now = t.buy_it_now || false
+          end
         end
       end
 
