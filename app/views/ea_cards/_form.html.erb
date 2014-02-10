@@ -1,0 +1,33 @@
+<%= form_for(@ea_card) do |f| %>
+  <% if @ea_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ea_card.errors.count, "error") %> prohibited this ea_card from being saved:</h2>
+
+      <ul>
+      <% @ea_card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :card_db_id, "Card DB Id" %><br>
+    <%= f.number_field :card_db_id %>
+  </div>
+  <div class="field">
+    <%= f.label :player_type %><br>
+    <%= f.select :player_type_id, PlayerType.all.collect {|lt| [lt.name, lt.id]}, { :include_blank => true } %>
+  </div>
+  <div class="field">
+    <%= f.label :auto_buy_at %><br>
+    <%= f.number_field :auto_buy_at %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

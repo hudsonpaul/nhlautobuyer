@@ -1,0 +1,33 @@
+<h1>Listing ea_cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Card db</th>
+      <th>Player type</th>
+      <th>Auto buy at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ea_cards.each do |ea_card| %>
+      <tr>
+        <td><%= ea_card.name %></td>
+        <td><%= ea_card.card_db_id %></td>
+        <td><%= ea_card.player_type %></td>
+        <td><%= ea_card.auto_buy_at %></td>
+        <td><%= link_to 'Show', ea_card %></td>
+        <td><%= link_to 'Edit', edit_ea_card_path(ea_card) %></td>
+        <td><%= link_to 'Destroy', ea_card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ea card', new_ea_card_path %>

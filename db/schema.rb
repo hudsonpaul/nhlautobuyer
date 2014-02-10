@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140104013914) do
+ActiveRecord::Schema.define(version: 20140210173657) do
 
   create_table "auto_bids", force: true do |t|
     t.integer  "trade_id"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20140104013914) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ea_cards", force: true do |t|
+    t.string   "name"
+    t.integer  "card_db_id"
+    t.integer  "player_type_id"
+    t.integer  "auto_buy_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ea_cards", ["player_type_id"], name: "index_ea_cards_on_player_type_id"
 
   create_table "ea_sessions", force: true do |t|
     t.string   "session_key"

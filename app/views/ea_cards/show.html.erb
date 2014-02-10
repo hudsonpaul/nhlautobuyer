@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ea_card.name %>
+</p>
+
+<p>
+  <strong>Card db:</strong>
+  <%= @ea_card.card_db_id %>
+</p>
+
+<p>
+  <strong>Player type:</strong>
+  <%= @ea_card.player_type.name %>
+</p>
+
+<p>
+  <strong>Auto buy at:</strong>
+  <%= @ea_card.auto_buy_at %>
+</p>
+
+<%= link_to 'Edit', edit_ea_card_path(@ea_card) %> |
+<%= link_to 'Back', ea_cards_path %>

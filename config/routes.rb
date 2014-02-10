@@ -1,4 +1,6 @@
 Nhlbuyer::Application.routes.draw do
+  resources :ea_cards
+
   resources :auto_bids
 
   resources :purchases

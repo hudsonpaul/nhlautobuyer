@@ -1,0 +1,2 @@
+module EaCardsHelper
+end

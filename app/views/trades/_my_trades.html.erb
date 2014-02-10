@@ -13,6 +13,7 @@
     <th>Seller</th>
     <th>Offers</th>
     <th>State</th>
+    <th>Id</th>
     <th>Actions</th>
   </tr>
   <% trades.each do |trade| %>
@@ -28,6 +29,7 @@
       <td><%= trade.seller %></td>
       <td><%= trade.offers_pending %></td>
       <td><%= trade.trade_state %></td>
+      <td><%= trade.trade_id %></td>
       <td>
         <% if trade.trade_state == 'Expired' %>
           <%= link_to 'List', new_list_card_path(:card_id => trade.card.card_id), :data => {:confirm => "Are you sure you want to list #{trade.card.name}?"} %>
