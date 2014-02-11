@@ -1,6 +1,6 @@
 <h1>Listing ea_cards</h1>
 
-<table>
+<table class="table table-condensed">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,7 +18,7 @@
       <tr>
         <td><%= ea_card.name %></td>
         <td><%= ea_card.card_db_id %></td>
-        <td><%= ea_card.player_type %></td>
+        <td><%= ea_card.player_type.name %></td>
         <td><%= ea_card.auto_buy_at %></td>
         <td><%= link_to 'Show', ea_card %></td>
         <td><%= link_to 'Edit', edit_ea_card_path(ea_card) %></td>

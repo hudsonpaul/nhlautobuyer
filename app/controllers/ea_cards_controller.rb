@@ -4,7 +4,7 @@ class EaCardsController < ApplicationController
   # GET /ea_cards
   # GET /ea_cards.json
   def index
-    @ea_cards = EaCard.all
+    @ea_cards = EaCard.all(:order => 'player_type_id, name')
   end
 
   # GET /ea_cards/1
