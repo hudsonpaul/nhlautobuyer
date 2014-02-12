@@ -44,7 +44,7 @@
       </td>
       <td><%= number_with_delimiter(trade.bin, :delimiter => ',') %></td>
       <td><%= number_with_delimiter(trade.start_price, :delimiter => ',') %></td>
-      <td><%= number_with_delimiter(trade.bid, :delimiter => ',') %></td>
+      <td class="<%= 'success' if trade.should_bid? %>"><%= number_with_delimiter(trade.bid, :delimiter => ',') %></td>
       <td>
         <% if trade.auto_bid %>
           <%= number_with_delimiter(trade.auto_bid.max_bid, :delimiter => ',') %>
