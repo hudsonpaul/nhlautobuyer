@@ -76,6 +76,6 @@ class SearchesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def search_params
-      params.require(:search).permit(:name, :team_id, :position_id, :style_id, :name_filter, :bin_filter, :always_buy, :player_type_id, :use_autobuyer, :min_bin, :min_bid, :max_bid)
+      params.require(:search).permit(:name, :team_id, :position_id, :style_id, :name_filter, :bin_filter, :always_buy, :player_type_id, :use_autobuyer, :min_bin, :min_bid, :max_bid, :league_id)
     end
 end

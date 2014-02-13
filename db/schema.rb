@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210173657) do
+ActiveRecord::Schema.define(version: 20140213164640) do
 
   create_table "auto_bids", force: true do |t|
     t.integer  "trade_id"
@@ -49,6 +49,13 @@ ActiveRecord::Schema.define(version: 20140210173657) do
 
   add_index "filters", ["search_id"], name: "index_filters_on_search_id"
 
+  create_table "leagues", force: true do |t|
+    t.string   "name"
+    t.integer  "ea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "player_types", force: true do |t|
     t.string   "name"
     t.integer  "ea_id"
@@ -85,6 +92,7 @@ ActiveRecord::Schema.define(version: 20140210173657) do
     t.integer  "min_bin"
     t.integer  "min_bid"
     t.integer  "max_bid"
+    t.integer  "league_id"
   end
 
   add_index "searches", ["position_id"], name: "index_searches_on_position_id"

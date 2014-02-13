@@ -11,6 +11,7 @@
       <th>Max Bid</th>
       <th>Use Auto Buyer</th>
       <th>Team</th>
+      <th>League</th>
       <th>Position</th>
       <th>Style</th>
       <th></th>
@@ -30,6 +31,7 @@
         <td><%= number_with_delimiter(search.max_bid, :delimiter => ',') %></td>
         <td><%= search.use_autobuyer %></td>
         <td><%= search.team.name %></td>
+        <td><%= search.league.name %></td>
         <td><%= search.position.name %></td>
         <td><%= search.style.name %></td>
         <td><%= link_to 'Edit', edit_search_path(search) %></td>

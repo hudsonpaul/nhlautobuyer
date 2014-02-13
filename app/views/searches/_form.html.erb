@@ -20,6 +20,10 @@
     <%= f.select :player_type_id, PlayerType.all.collect {|lt| [lt.name, lt.id]}, { :include_blank => true } %>
   </div>
   <div class="field">
+    <%= f.label :league_id %>
+    <%= f.select :league_id, League.all.collect {|lt| [lt.name, lt.id]}, { :include_blank => true } %>
+  </div>
+  <div class="field">
     <%= f.label :team_id %>
     <%= f.select :team_id, Team.all.collect {|lt| [lt.name, lt.id]}, { :include_blank => true } %>
   </div>
