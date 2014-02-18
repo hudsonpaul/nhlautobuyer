@@ -15,9 +15,10 @@ class Trade
   end
 
   def should_bid?
-    return false if self.bid == 0
     return false if self.ea_card.nil?
+    return true if self.ea_card.auto_buy_at >= self.start_price && self.bid == 0
     return true if self.bid <= self.ea_card.auto_buy_at && self.start_price <= self.ea_card.auto_buy_at
+    return false
   end
 
   def self.create_from_watchlist(results)

@@ -24,7 +24,7 @@ class Searches
       results = [results]
     end
 
-    trades = Trade.create_from(results, search).sort_by {|t| [t.buy_it_now, t.bin, t.start_price]}
+    trades = Trade.create_from(results, search).sort_by {|t| [t.buy_it_now, t.bin, t.start_price, t.card.name]}
     trades
   end
 

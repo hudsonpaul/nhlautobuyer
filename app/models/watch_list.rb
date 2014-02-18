@@ -14,7 +14,7 @@ class WatchList
     response = connection.get EaUrls.watchlist_url(current_session)
 
     watch_hash = Hash.from_xml(response.body) 
-    #ap watch_hash
+    ap watch_hash
 
     return [] if watch_hash["iswatchlist"]["traderesults"].nil?
 
