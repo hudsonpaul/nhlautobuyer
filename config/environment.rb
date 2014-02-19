@@ -13,3 +13,9 @@ class NilClass
     return ''
   end
 end
+
+class Integer
+  def with_commas
+    self.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse
+  end
+end
