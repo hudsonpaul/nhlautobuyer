@@ -5,7 +5,7 @@
 <% end %>
 
 <% @offers.each do |offer| %>
-  <p><b>Pucks:</b> <%= offer.pucks %></p>
+  <p><b>Pucks:</b> <%= number_with_delimiter(offer.pucks) %></p>
  
 <table class="table table-condensed table-hover">
   <tr>
