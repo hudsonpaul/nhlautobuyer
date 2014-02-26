@@ -21,23 +21,23 @@
   <% trades.each do |trade| %>
     <tr class="<%= 'success' if trade.buy_it_now == 0 %>">
       <td>
-        <% if trade.ea_card %>
-           <%= trade.ea_card.name %>
+        <% if trade.card.ea_card %>
+           <%= trade.card.ea_card.name %>
         <% else %>
            <%= trade.card.name %>
         <%end %>
       </td>
       <td>
-        <% if trade.ea_card %>
-          <%= link_to trade.ea_card.player_type.name, edit_ea_card_path(trade.ea_card) %>
+        <% if trade.card.ea_card %>
+          <%= link_to trade.card.ea_card.player_type.name, edit_ea_card_path(trade.card.ea_card) %>
         <% else %>
           <%= link_to 'Create', new_ea_card_path(:ea_card => {:card_db_id => trade.card.card_db_id}) %>
         <% end %>
       </td>
       <td><%= trade.card.overall %></td>
       <td>
-        <% if trade.ea_card %>
-           <%= number_with_delimiter(trade.ea_card.auto_buy_at, :delimiter => ',') %>
+        <% if trade.card.ea_card %>
+           <%= number_with_delimiter(trade.card.ea_card.auto_buy_at, :delimiter => ',') %>
         <% else %>
            N/A
         <% end %>

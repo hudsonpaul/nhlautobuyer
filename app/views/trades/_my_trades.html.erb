@@ -29,7 +29,10 @@
       <td><%= trade.seller %></td>
       <td><%= trade.offers_pending %></td>
       <td><%= trade.trade_state %></td>
-      <td><%= trade.trade_id %></td>
+      <td>
+         <% if trade.trade_state == "In Progress" %>
+         <%= link_to 'View Offers', get_offer_url(trade.trade_id) %></td>
+         <% end %>
       <td>
         <% if trade.trade_state == 'Expired' %>
           <%= link_to 'List', new_list_card_path(:card_id => trade.card.card_id), :data => {:confirm => "Are you sure you want to list #{trade.card.name}?"} %>

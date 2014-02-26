@@ -1,0 +1,49 @@
+<h1>Offers are:</h1>
+
+<% if @offers.length == 0 %>
+  <p>No offers...</p>
+<% end %>
+
+<% @offers.each do |offer| %>
+  <p><b>Pucks:</b> <%= offer.pucks %></p>
+ 
+<table class="table table-condensed table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>OVR</th>
+    <th>Buy At</th>
+    <th>POS</th>
+    <th>Style</th>
+  </tr>
+  <% offer.cards.each do |card| %>
+    <tr >
+      <td>
+        <% if card.ea_card %>
+           <%= card.ea_card.name %>
+        <% else %>
+           <%= card.name %>
+        <%end %>
+      </td>
+      <td>
+        <% if card.ea_card %>
+          <%= link_to card.ea_card.player_type.name, edit_ea_card_path(card.ea_card) %>
+        <% else %>
+          <%= link_to 'Create', new_ea_card_path(:ea_card => {:card_db_id => card.card_db_id}) %>
+        <% end %>
+      </td>
+      <td><%= card.overall %></td>
+      <td>
+        <% if card.ea_card %>
+           <%= number_with_delimiter(card.ea_card.auto_buy_at, :delimiter => ',') %>
+        <% else %>
+           N/A
+        <% end %>
+      </td>
+      <td><%= card.position.name %></td>
+      <td><%= card.style.name %></td>
+    </tr>
+
+  <% end %>
+</table>
+<% end %>

@@ -4,7 +4,7 @@ class Trade
   extend ActiveModel::Naming
   require 'awesome_print'
 
-  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid, :bid_state, :ea_card
+  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid, :bid_state
 
   def min_required_bid
     if (self.bid == 0)
@@ -15,9 +15,9 @@ class Trade
   end
 
   def should_bid?
-    return false if self.ea_card.nil?
-    return true if self.ea_card.auto_buy_at >= self.start_price && self.bid == 0
-    return true if self.bid <= self.ea_card.auto_buy_at && self.start_price <= self.ea_card.auto_buy_at
+    return false if self.card.ea_card.nil?
+    return true if self.card.ea_card.auto_buy_at >= self.start_price && self.bid == 0
+    return true if self.bid <= self.card.ea_card.auto_buy_at && self.start_price <= self.card.ea_card.auto_buy_at
     return false
   end
 
@@ -47,7 +47,6 @@ class Trade
       t.bid_state = "Winning" if result['yourbidstate'].to_i == 2
       
       t.card = Card.create_from_carddata(result['carddata'])
-      t.ea_card = EaCard.where(:card_db_id => t.card.card_db_id).first
 
       trades << t
 
@@ -82,10 +81,9 @@ class Trade
       
 
       t.card = Card.create_from_carddata(result['carddata'])
-      t.ea_card = EaCard.where(:card_db_id => t.card.card_db_id).first
 
-      if t.ea_card
-        if t.bin <= t.ea_card.auto_buy_at && t.bin != 0
+      if t.card.ea_card
+        if t.bin <= t.card.ea_card.auto_buy_at && t.bin != 0
           t.buy_it_now = t.buy_it_now || true
 	else
           t.buy_it_now = t.buy_it_now || false

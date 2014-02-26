@@ -62,6 +62,11 @@ class EaUrls
   def self.start_trade_url(current_session, card_id, reserve, bin, time)
     return "/wal/nhl-2014-ps3-ios/cardhouse/isStart/#{current_session.session_key}?uid=#{current_session.user_id}&cid=#{card_id}&cred=#{bin}&resv=#{reserve}&prd=#{time}&oftx=Buy%20me!"
   end
+
+  def self.get_offers_url(current_session, trade_id)
+    return "/wal/nhl-2014-ps3-ios/cardhouse/isGetOffers/#{current_session.session_key}?uid=#{current_session.user_id}&noac=0&msid=0&strt=0&tid=#{trade_id}&numr=0"
+  end
+
   private
 
   def self.authenticate(login_info)

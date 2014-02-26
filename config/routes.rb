@@ -14,6 +14,7 @@ Nhlbuyer::Application.routes.draw do
   resources :deck_info
   resources :selling
   resources :list_cards
+  resources :get_offers
   resources :searches do
     resources :filters
   end
