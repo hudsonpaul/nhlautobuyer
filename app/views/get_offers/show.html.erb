@@ -15,6 +15,7 @@
     <th>Buy At</th>
     <th>POS</th>
     <th>Style</th>
+    <th>GP</th>
   </tr>
   <% offer.cards.each do |card| %>
     <tr >
@@ -42,6 +43,7 @@
       </td>
       <td><%= card.position.name %></td>
       <td><%= card.style.name %></td>
+      <td><%= card.games_played %></td>
     </tr>
 
   <% end %>

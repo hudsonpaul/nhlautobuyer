@@ -13,6 +13,7 @@
     <th>MyBid</th>
     <th>POS</th>
     <th>Style</th>
+    <th>GP</th>
     <th>Time</th>
     <th>Seller</th>
     <th>TradeId</th>
@@ -57,6 +58,7 @@
       <td><%= trade.bid_state %></td>
       <td><%= trade.card.position.name %></td>
       <td><%= trade.card.style.name %></td>
+      <td><%= trade.card.games_played %></td>
       <td><%= humanize trade.time_remaining %></td>
       <td><%= trade.seller %></td>
       <td><%= trade.trade_id %></td>
