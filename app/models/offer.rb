@@ -17,9 +17,9 @@ class Offer
     
     results.each do |result|
       my_offer = Offer.new    
-      my_offer.pucks = result['isofferinfo']['credits'].to_i
+      my_offer.pucks = result['credits'].to_i
 
-      my_offer.cards = Card.get_cards_from(result['isofferinfo']['carddatalist']['carddata'])
+      my_offer.cards = Card.get_cards_from(result['carddatalist']['carddata'])
       
       my_offers << my_offer
     end 

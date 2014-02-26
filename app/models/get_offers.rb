@@ -18,7 +18,7 @@ class GetOffers
 
     return [] if offers_hash['isgetoffers']['totalcount'].to_i == 0
 
-    results = offers_hash['isgetoffers']['offerlist']
+    results = offers_hash['isgetoffers']['offerlist']['isofferinfo']
 
     if !results.kind_of?(Array)
       results = [results]
