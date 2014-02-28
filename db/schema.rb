@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140213164640) do
+ActiveRecord::Schema.define(version: 20140228224834) do
 
   create_table "auto_bids", force: true do |t|
     t.integer  "trade_id"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20140213164640) do
     t.integer  "ea_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_usable",  default: true
   end
 
 end
