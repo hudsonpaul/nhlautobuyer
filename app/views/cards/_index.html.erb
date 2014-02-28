@@ -5,6 +5,7 @@
     <th>Type</th>
     <th>POS</th>
     <th>Style</th>
+    <th>GP</th>
     <th>CardId</th>
     <th>Actions</th>
   </tr>
@@ -14,6 +15,7 @@
       <td><%= card.player_type.name %></td>
       <td><%= card.position.name %></td>
       <td><%= card.style.name %></td>
+      <td><%= card.games_played %></td>
       <td><%= card.card_id %></td>
       <td>
         <p><%= link_to 'List', new_list_card_path(:card_id => card.card_id), :data => {:confirm => "Are you sure you want to list #{card.name}?"} %></p>

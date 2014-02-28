@@ -14,7 +14,7 @@ class GetOffers
     response = connection.get EaUrls.get_offers_url(current_session, trade_id)
 
     offers_hash = Hash.from_xml(response.body) 
-    #ap offers_hash
+    ap offers_hash
 
     return [] if offers_hash['isgetoffers']['totalcount'].to_i == 0
 

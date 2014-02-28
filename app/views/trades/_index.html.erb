@@ -61,7 +61,7 @@
       <td><%= trade.card.games_played %></td>
       <td><%= humanize trade.time_remaining %></td>
       <td><%= trade.seller %></td>
-      <td><%= trade.trade_id %></td>
+      <td><%= link_to trade.trade_id, get_offer_url(trade.trade_id) %></td>
       <td>
         <%= link_to 'BIN', bid_show_path(:trade_id => trade.trade_id, :amount => trade.bin), :data => {:confirm => "Are you sure you want to bin for #{trade.bin}?"} %>
         <% if trade.is_watched %>

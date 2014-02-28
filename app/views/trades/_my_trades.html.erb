@@ -11,7 +11,7 @@
     <th>Style</th>
     <th>Time</th>
     <th>Seller</th>
-    <th>Offers</th>
+    <th>GP</th>
     <th>State</th>
     <th>Id</th>
     <th>Actions</th>
@@ -27,7 +27,7 @@
       <td><%= trade.card.style.name %></td>
       <td><%= humanize trade.time_remaining %></td>
       <td><%= trade.seller %></td>
-      <td><%= trade.offers_pending %></td>
+      <td><%= trade.card.games_played %></td>
       <td><%= trade.trade_state %></td>
       <td>
          <% if trade.trade_state == "In Progress" %>
