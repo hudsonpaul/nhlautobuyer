@@ -10,7 +10,7 @@ class Card
     card = Card.new 
 
     if carddata['strdata']['strdata'].kind_of?(Array)
-      card.name = "#{carddata['strdata']['strdata'][0]} #{carddata['strdata']['strdata'][1]}" 
+      card.name = carddata['strdata']['strdata'].join(' ')
     else
       card.name = "#{carddata['strdata']['strdata']}" 
     end
