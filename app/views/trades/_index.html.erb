@@ -32,7 +32,7 @@
         <% if trade.card.ea_card %>
           <%= link_to trade.card.ea_card.player_type.name, edit_ea_card_path(trade.card.ea_card) %>
         <% else %>
-          <%= link_to 'Create', new_ea_card_path(:ea_card => {:card_db_id => trade.card.card_db_id}) %>
+          <%= link_to 'Create', new_ea_card_path(:ea_card => {:card_db_id => trade.card.card_db_id, :name => trade.card.name}) %>
         <% end %>
       </td>
       <td><%= trade.card.overall %></td>

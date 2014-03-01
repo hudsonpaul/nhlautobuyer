@@ -16,6 +16,7 @@ class EaCardsController < ApplicationController
   def new
     @ea_card = EaCard.new
     @ea_card.card_db_id = params[:ea_card][:card_db_id]
+    @ea_card.name = params[:ea_card][:name]
   end
 
   # GET /ea_cards/1/edit

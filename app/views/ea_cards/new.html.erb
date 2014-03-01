@@ -3,3 +3,7 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', ea_cards_path %>
+
+<% Team.all.each do |team| %>
+<p><%= team.ea_id %>: <%= team.name %></p>
+<% end %>
