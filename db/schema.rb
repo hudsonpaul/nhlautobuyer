@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228224834) do
+ActiveRecord::Schema.define(version: 20140301011510) do
 
   create_table "auto_bids", force: true do |t|
     t.integer  "trade_id"
