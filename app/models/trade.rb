@@ -4,7 +4,21 @@ class Trade
   extend ActiveModel::Naming
   require 'awesome_print'
 
-  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid, :bid_state
+  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :seller_id, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid, :bid_state
+
+  
+  def self.do_trade(current_session, trade, amount, card_id)
+
+    connection = EaUrls.get_connection
+
+    response = connection.get EaUrls.trade_url(current_session, trade, amount, card_id)
+
+    bid_hash = Hash.from_xml(response.body) 
+    ap bid_hash
+
+    return bid_hash
+
+  end
 
   def min_required_bid
     if (self.bid == 0)
@@ -33,6 +47,7 @@ class Trade
       t.bin = result['credits'].to_i
       t.time_remaining = result['expiretime'].to_i
       t.seller = result['sellername']
+      t.seller_id = result['sellerid'].to_i
       t.my_bid = !result['yourbidstate'].to_i.zero?
       t.offers_pending = result['offerspendingcount'].to_i
       t.is_watched = result["iswatched"] == "1" ? true : false
@@ -67,6 +82,7 @@ class Trade
       t.bin = result['credits'].to_i
       t.time_remaining = result['expiretime'].to_i
       t.seller = result['sellername']
+      t.seller_id = result['sellerid'].to_i
       t.my_bid = !result['yourbidstate'].to_i.zero?
       t.offers_pending = result['offerspendingcount'].to_i
       t.is_watched = result["iswatched"] == "1" ? true : false

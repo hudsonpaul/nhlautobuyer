@@ -43,6 +43,10 @@ class EaUrls
     return "/wal/nhl-2014-ps3-ios/cardhouse/isOfferTrade/#{current_session.session_key}?uid=#{current_session.user_id}&cred=#{bid_amount}&tid=#{trade_id}"
   end
 
+  def self.trade_url(current_session, trade_id, bid_amount, card_id)
+    return "/wal/nhl-2014-ps3-ios/cardhouse/isOfferTrade/#{current_session.session_key}?uid=#{current_session.user_id}&cred=#{bid_amount}&tid=#{trade_id}&cid=#{card_id}"
+  end
+
   def self.deck_info_url(current_session)
     return "/wal/nhl-2014-ps3-ios/cardhouse/deckInfo/#{current_session.session_key}?uid=#{current_session.user_id}&acid=-1&ver=1&pers=0"
   end

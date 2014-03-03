@@ -5,12 +5,14 @@
 <% end %>
 
 <% @offers.each do |offer| %>
+  <p><b>Offer From:</b> <%= offer.offered_by.name %> </p>
   <p><b>Pucks:</b> <%= number_with_delimiter(offer.pucks) %></p>
  
 <table class="table table-condensed table-hover">
   <tr>
     <th>Name</th>
     <th>Type</th>
+    <th>Team</th>
     <th>OVR</th>
     <th>Buy At</th>
     <th>POS</th>
@@ -33,6 +35,7 @@
           <%= link_to 'Create', new_ea_card_path(:ea_card => {:card_db_id => card.card_db_id, :name => card.name}) %>
         <% end %>
       </td>
+      <td><%= card.team.name %></td>
       <td><%= card.overall %></td>
       <td>
         <% if card.ea_card %>
