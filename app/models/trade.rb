@@ -4,7 +4,7 @@ class Trade
   extend ActiveModel::Naming
   require 'awesome_print'
 
-  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :seller_id, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid, :bid_state
+  attr_accessor :trade_id, :bid, :bin, :time_remaining, :seller, :seller_id, :my_bid, :offers_pending, :buy_it_now, :start_price, :card, :is_watched, :trade_state, :auto_bid, :bid_state, :bidder
 
   
   def self.do_trade(current_session, trade, amount, card_id)
@@ -61,6 +61,12 @@ class Trade
       t.bid_state = "Losing" if result['yourbidstate'].to_i == 1
       t.bid_state = "Winning" if result['yourbidstate'].to_i == 2
       
+      t.bidder = EaUser.where(:ea_id => result['bidderid'].to_i).first
+
+      if t.bidder.nil?
+        t.bidder = EaUser.new(:ea_id => result['bidderid'].to_i, :name => result['bidderid'].to_i)
+      end
+
       t.card = Card.create_from_carddata(result['carddata'])
 
       trades << t
@@ -95,6 +101,12 @@ class Trade
       t.bid_state = "Losing" if result['yourbidstate'].to_i == 1
       t.bid_state = "Winning" if result['yourbidstate'].to_i == 2
       
+
+      t.bidder = EaUser.where(:ea_id => result['bidderid'].to_i).first
+
+      if t.bidder.nil?
+        t.bidder = EaUser.new(:ea_id => result['bidderid'].to_i, :name => result['bidderid'].to_i)
+      end
 
       t.card = Card.create_from_carddata(result['carddata'])
 

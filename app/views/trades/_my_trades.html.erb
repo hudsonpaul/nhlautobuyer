@@ -6,6 +6,7 @@
     <th>BIN</th>
     <th>Start</th>
     <th>Current Bid</th>
+    <th>Bidder</th>
     <th>Type</th>
     <th>POS</th>
     <th>Style</th>
@@ -22,6 +23,7 @@
       <td><%= number_with_delimiter(trade.bin, :delimiter => ',') %></td>
       <td><%= number_with_delimiter(trade.start_price, :delimiter => ',') %></td>
       <td><%= number_with_delimiter(trade.bid, :delimiter => ',') %></td>
+      <td><%= trade.bidder.name %></td>
       <td><%= trade.card.player_type.name %></td>
       <td><%= trade.card.position.name %></td>
       <td><%= trade.card.style.name %></td>

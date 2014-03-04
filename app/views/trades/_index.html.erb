@@ -9,6 +9,7 @@
     <th>BIN</th>
     <th>Start</th>
     <th>Current Bid</th>
+    <th>Bidder</th>
     <th>AutoBid</th>
     <th>MyBid</th>
     <th>POS</th>
@@ -46,6 +47,7 @@
       <td><%= number_with_delimiter(trade.bin, :delimiter => ',') %></td>
       <td><%= number_with_delimiter(trade.start_price, :delimiter => ',') %></td>
       <td class="<%= 'success' if trade.should_bid? %>"><%= number_with_delimiter(trade.bid, :delimiter => ',') %></td>
+      <td><%= trade.bidder.name %></td>
       <td>
         <% if trade.auto_bid %>
           <%= number_with_delimiter(trade.auto_bid.max_bid, :delimiter => ',') %>
