@@ -11,7 +11,13 @@
   </tr>
   <% cards.each do |card| %>
     <tr >
-      <td><%= card.name %></td>
+      <td>
+        <% if card.ea_card %>
+           <%= card.ea_card.name %>
+        <% else %>
+           <%= card.name %>
+        <%end %>
+      </td>
       <td><%= card.player_type.name %></td>
       <td><%= card.position.name %></td>
       <td><%= card.style.name %></td>
