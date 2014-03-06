@@ -18,7 +18,7 @@
         <td><%= purchase.player_name %></td>
         <td><%= purchase.status %></td>
         <td><%= purchase.amount %></td>
-        <td><%= purchase.created_at %></td>
+        <td><%= purchase.created_at.localtime %></td>
       </tr>
     <% end %>
   </tbody>
