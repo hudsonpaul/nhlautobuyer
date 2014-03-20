@@ -1,4 +1,5 @@
 Nhlbuyer::Application.routes.draw do
+  devise_for :users
   resources :ea_cards
 
   resources :auto_bids
@@ -24,6 +25,7 @@ Nhlbuyer::Application.routes.draw do
 
   get "watch/:trade_id" => 'watch#show'
   get "unwatch/:trade_id" => 'unwatch#show'
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
