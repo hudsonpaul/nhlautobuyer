@@ -9,4 +9,12 @@ module ApplicationHelper
                               end
               }.compact.reverse.join(' ')
   end
+
+  def get_class_for_time(secs)
+
+    return 'danger' if secs <= 600 && secs >0
+    return 'warning' if secs <= 3600 && secs > 600
+    return ''
+
+  end
 end

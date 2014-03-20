@@ -61,7 +61,7 @@
       <td><%= trade.card.position.name %></td>
       <td><%= trade.card.style.name %></td>
       <td><%= trade.card.games_played %></td>
-      <td><%= humanize trade.time_remaining %></td>
+      <td class="<%= get_class_for_time(trade.time_remaining) %>"><%= humanize trade.time_remaining %></td>
       <td><%= trade.seller %></td>
       <td><%= link_to trade.trade_id, get_offer_url(trade.trade_id) %></td>
       <td>
