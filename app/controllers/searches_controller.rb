@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
   # GET /searches
   # GET /searches.json
   def index
-    @searches = Search.all.order(:name)
+    @searches = Search.all.order("use_autobuyer desc, name")
   end
 
   # GET /searches/1
