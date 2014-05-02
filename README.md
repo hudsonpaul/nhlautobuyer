@@ -1,5 +1,9 @@
 # NHL Auto Buyer
 
+## Warning
+
+Currently, this ONLY works for PS3.
+
 ## Quick Start
 
 First, clone the repo.
