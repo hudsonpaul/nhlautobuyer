@@ -1,6 +1,6 @@
 Nhlbuyer::Application.routes.draw do
 
-  root "watchlist#index"
+  root "logins#index"
 
   devise_for :users
   resources :ea_cards
