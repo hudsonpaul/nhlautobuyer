@@ -2,7 +2,7 @@
 
 ## Warning
 
-Currently, this ONLY works for PS3.
+Currently, this ONLY works for PS3. It could, however, quite easily be changed to work for XBox.
 
 ## Quick Start
 
