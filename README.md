@@ -24,9 +24,9 @@ _Note: You WILL want to disable registrations after your first user is created, 
 
 Log in using your EA information.
 
-*Username: This is your PSN name (mine was beigesunshine)
-*Email Address: This is your EA Account's email address
-*Password: This is your EA Account's password
+* Username: This is your PSN name (mine was beigesunshine)
+* Email Address: This is your EA Account's email address
+* Password: This is your EA Account's password
 
 
 
