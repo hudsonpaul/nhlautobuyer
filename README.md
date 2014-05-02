@@ -1,5 +1,7 @@
 # NHL Auto Buyer
 
+Have questions? Send them to beigesunshine@gmail.com
+
 ## Warning
 
 Currently, this ONLY works for PS3. It could, however, quite easily be changed to work for XBox.
