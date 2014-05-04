@@ -8,7 +8,7 @@ Currently, there is some issues with Windows. I am working on a tutorial and a f
 
 Currently, this ONLY works for PS3. It could, however, quite easily be changed to work for XBox.
 
-For those who are on XBox, there is a potential (unverified) solution (here)[http://www.reddit.com/r/NHLHUT/comments/24jxcc/see_inside_an_nhl_auto_buying_bot/ch7zrdz]
+For those who are on XBox, there is a potential (unverified) solution [here] [http://www.reddit.com/r/NHLHUT/comments/24jxcc/see_inside_an_nhl_auto_buying_bot/ch7zrdz]
 
 ## Overview
 
@@ -20,7 +20,7 @@ Currently, the Auto Buyer consists of 3 parts.
 
 ## Quick Start
 
-For windows users, please see the wiki page on (How to install Ruby on Windows)[https://github.com/nhlautobuyer/nhlautobuyer/wiki/Windows-Installation]
+For windows users, please see the wiki page on [How to install Ruby on Windows] [https://github.com/nhlautobuyer/nhlautobuyer/wiki/Windows-Installation]
 
 First, clone the repo, or if desired, download and unzip the ZIP file from the right hand side of the page.
 
