@@ -13,3 +13,6 @@
  */
 
 .buy_it_now { background-color: #00FF00; }
+.table tbody tr td.success { background-color: #dff0d8; }
+.table tbody tr td.warning { background-color: #f0ad4e; }
+.table tbody tr td.danger { background-color: #d9534f; }

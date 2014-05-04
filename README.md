@@ -2,6 +2,8 @@
 
 Have questions? Send them to beigesunshine@gmail.com
 
+Currently, there is some issues with Windows. I am working on a tutorial and a fix.
+
 ## Warning
 
 Currently, this ONLY works for PS3. It could, however, quite easily be changed to work for XBox.
