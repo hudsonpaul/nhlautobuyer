@@ -8,6 +8,8 @@ Currently, there is some issues with Windows. I am working on a tutorial and a f
 
 Currently, this ONLY works for PS3. It could, however, quite easily be changed to work for XBox.
 
+For those who are on XBox, there is a potential (unverified) solution (here)[http://www.reddit.com/r/NHLHUT/comments/24jxcc/see_inside_an_nhl_auto_buying_bot/ch7zrdz]
+
 ## Overview
 
 Currently, the Auto Buyer consists of 3 parts. 
