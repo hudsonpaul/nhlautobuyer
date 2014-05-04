@@ -18,7 +18,11 @@ Currently, the Auto Buyer consists of 3 parts.
 
 ## Quick Start
 
-First, clone the repo.
+For windows users, please see the wiki page on (How to install Ruby on Windows)[https://github.com/nhlautobuyer/nhlautobuyer/wiki/Windows-Installation]
+
+First, clone the repo, or if desired, download and unzip the ZIP file from the right hand side of the page.
+
+Open a command prompt and change the directory to the place where you cloned/unzipped the autobuyer.
 
 Then run `bundle install` from the command line:
 
