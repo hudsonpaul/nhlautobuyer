@@ -26,6 +26,8 @@ First, clone the repo, or if desired, download and unzip the ZIP file from the r
 
 Open a command prompt and change the directory to the place where you cloned/unzipped the autobuyer.
 
+_REMEMBER TO CHANGE THE DIRECTORY!!! This is the most common mistake I've been getting emails about. You MUST be running the following commands from within the directory of the code_
+
 Then run `bundle install` from the command line:
 
     bundle install
