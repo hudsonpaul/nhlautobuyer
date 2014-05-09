@@ -20,7 +20,7 @@ Currently, the Auto Buyer consists of 3 parts.
 
 ## Quick Start
 
-For windows users, please see the wiki page on [How to install Ruby on Windows] [https://github.com/nhlautobuyer/nhlautobuyer/wiki/Windows-Installation]
+For windows users, please see the wiki page on [How to install Ruby on Windows] (https://github.com/nhlautobuyer/nhlautobuyer/wiki/Windows-Installation)
 
 First, clone the repo, or if desired, download and unzip the ZIP file from the right hand side of the page.
 
