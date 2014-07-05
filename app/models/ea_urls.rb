@@ -32,43 +32,43 @@ class EaUrls
   end
 
   def self.watchlist_url(current_session)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isWatchList/#{current_session.session_key}?uid=#{current_session.user_id}&st=0&num=45&srt=0"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/isWatchList/#{current_session.session_key}?uid=#{current_session.user_id}&st=0&num=45&srt=0"
   end
 
   def self.search_url(current_session, search)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isSearch/#{current_session.session_key}?ctyp=1&minb=#{search.min_bin}&noac=0&numr=90&macr=#{search.max_bid}&leag=#{search.league.ea_id}&maxb=#{search.bin_filter}&rtng=0&iret=true&micr=#{search.min_bid}&styl=#{search.style.ea_id}&pos=#{search.position.ea_id}&uid=#{current_session.user_id}&form=-1&cat=-1&team=#{search.team.ea_id}&mytr=0&zone=-1&plrt=#{search.player_type.ea_id}&lev=-1&strt=0&nat=-1"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/isSearch/#{current_session.session_key}?ctyp=1&minb=#{search.min_bin}&noac=0&numr=90&macr=#{search.max_bid}&leag=#{search.league.ea_id}&maxb=#{search.bin_filter}&rtng=0&iret=true&micr=#{search.min_bid}&styl=#{search.style.ea_id}&pos=#{search.position.ea_id}&uid=#{current_session.user_id}&form=-1&cat=-1&team=#{search.team.ea_id}&mytr=0&zone=-1&plrt=#{search.player_type.ea_id}&lev=-1&strt=0&nat=-1"
   end
 
   def self.bid_url(current_session, trade_id, bid_amount)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isOfferTrade/#{current_session.session_key}?uid=#{current_session.user_id}&cred=#{bid_amount}&tid=#{trade_id}"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/isOfferTrade/#{current_session.session_key}?uid=#{current_session.user_id}&cred=#{bid_amount}&tid=#{trade_id}"
   end
 
   def self.trade_url(current_session, trade_id, bid_amount, card_id)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isOfferTrade/#{current_session.session_key}?uid=#{current_session.user_id}&cred=#{bid_amount}&tid=#{trade_id}&cid=#{card_id}"
+    return "/walnhl-2014-xbl2-ios/cardhouse/isOfferTrade/#{current_session.session_key}?uid=#{current_session.user_id}&cred=#{bid_amount}&tid=#{trade_id}&cid=#{card_id}"
   end
 
   def self.deck_info_url(current_session)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/deckInfo/#{current_session.session_key}?uid=#{current_session.user_id}&acid=-1&ver=1&pers=0"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/deckInfo/#{current_session.session_key}?uid=#{current_session.user_id}&acid=-1&ver=1&pers=0"
   end
 
   def self.remove_watch_url(current_session, trade_id)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isRemoveWatch/#{current_session.session_key}?uid=#{current_session.user_id}&tidl|0=#{trade_id}&tid=#{trade_id}"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/isRemoveWatch/#{current_session.session_key}?uid=#{current_session.user_id}&tidl|0=#{trade_id}&tid=#{trade_id}"
   end
 
   def self.add_watch_url(current_session, trade_id)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isWatchTrade/#{current_session.session_key}?uid=#{current_session.user_id}&tid=#{trade_id}"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/isWatchTrade/#{current_session.session_key}?uid=#{current_session.user_id}&tid=#{trade_id}"
   end
 
   def self.my_trades_url(current_session)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isSearch/#{current_session.session_key}?ctyp=-1&minb=-1&noac=1&numr=40&macr=-1&leag=-1&maxb=-1&rtng=0&iret=true&micr=-1&styl=-1&pos=-1&uid=#{current_session.user_id}&form=-1&cat=-1&team=-1&mytr=2&zone=-1&plrt=-1&lev=-1&strt=0&nat=-1"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/isSearch/#{current_session.session_key}?ctyp=-1&minb=-1&noac=1&numr=40&macr=-1&leag=-1&maxb=-1&rtng=0&iret=true&micr=-1&styl=-1&pos=-1&uid=#{current_session.user_id}&form=-1&cat=-1&team=-1&mytr=2&zone=-1&plrt=-1&lev=-1&strt=0&nat=-1"
   end
 
   def self.start_trade_url(current_session, card_id, reserve, bin, time)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isStart/#{current_session.session_key}?uid=#{current_session.user_id}&cid=#{card_id}&cred=#{bin}&resv=#{reserve}&prd=#{time}&oftx=Buy%20me!"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/isStart/#{current_session.session_key}?uid=#{current_session.user_id}&cid=#{card_id}&cred=#{bin}&resv=#{reserve}&prd=#{time}&oftx=Buy%20me!"
   end
 
   def self.get_offers_url(current_session, trade_id)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/isGetOffers/#{current_session.session_key}?uid=#{current_session.user_id}&noac=0&msid=0&strt=0&tid=#{trade_id}&numr=0"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/isGetOffers/#{current_session.session_key}?uid=#{current_session.user_id}&noac=0&msid=0&strt=0&tid=#{trade_id}&numr=0"
   end
 
   private
@@ -109,15 +109,15 @@ class EaUrls
   end
 
   def self.authentication_url(username, email, password)
-    return "/wal/nhl-2014-ps3-ios/authentication/expressLogin?pass=#{password}&pnam=#{username}&mail=#{email}"
+    return "/wal/nhl-2014-xbl2-ios/authentication/expressLogin?pass=#{password}&pnam=#{username}&mail=#{email}"
   end
 
   def self.validate_session_key_url(session_key)
-    return "/wal/nhl-2014-ps3-ios/authentication/validateSessionKey/#{session_key}?skey=#{session_key}"
+    return "/wal/nhl-2014-xbl2-ios/authentication/validateSessionKey/#{session_key}?skey=#{session_key}"
   end
 
   def self.login_to_cardhouse_url(session_key, userid, username)
-    return "/wal/nhl-2014-ps3-ios/cardhouse/login/#{session_key}?clnt=0&pur=0&uid=#{userid}&cp=0&lang=0&pers=#{username}"
+    return "/wal/nhl-2014-xbl2-ios/cardhouse/login/#{session_key}?clnt=0&pur=0&uid=#{userid}&cp=0&lang=0&pers=#{username}"
   end
 
 
